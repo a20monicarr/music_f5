@@ -6,21 +6,40 @@
     <link rel="stylesheet" href="stylesForm.css" />
     <title>Form</title>
 </head>
-<body>
-    <div class="container">
+<body class="bodyForm">
+    <div class="containerform">
         <form class='form'>
-            <label class='labelFondo'>ARTISTA</label><br/>
-            <input class='fondo'/><br/>
-            <label class='labelFondo'>TÍTULO</label><br/>
-            <input class='fondo'/><br/>
-            <label class='labelFondo'>GÉNERO</label><br/>
-            <input class='fondo'/><br/>
-            <label class='labelFondo'>URL DE YOUTUBE</label><br/>
-            <input class='fondo'/><br/>
-            <label class='labelFondo'>IMAGEN</label><br/>
-            <input class='fondo'/><br/>
-            <button type="button" class="btn btn-primary">ENVIAR</button>       
+            <div class="formGroup">
+                <label for="labelFondoform">ARTISTA</label>
+                <input type="artista" class="fondoForm" >
+            </div>
+            <div class="formGroup">
+                <label for="labelFondoForm">TÍTULO</label>
+                <input type="artista" class="fondoForm" >
+            </div>    
+            <div class="formGroup">
+                <label for="labelFondoForm">GÉNERO</label>
+                <select class="fondoForm" >
+                  <option></option>
+                  <option>Rock</option>
+                  <option>Pop</option>
+                  <option>Classic</option>
+                  <option>Blues</option>
+                </select>
+            </div>
+            <div class="formGroup">
+                <label for="labelFondoForm">URL DE YOUTUBE</label>
+                <input type="artista" class="fondoForm" >
+            </div>
+
+            <div class="formGroup">
+                <label for="labelFondoform">IMAGEN</label>
+                <input type="disco" class="fondoForm" >
+                <input type="file" class="form-control" id="exampleFormControlFile1">
+              </div>
+            <button type="button" class="btnForm btn-primary" >ENVIAR</button>
         </form>
+       
     </div>
 
 </body>

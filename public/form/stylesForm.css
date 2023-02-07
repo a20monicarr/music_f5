@@ -1,32 +1,42 @@
-.container{
-    background-image: url(../../assets/img/black.png);
-    height: 750px;
-   
-}
-.form{
+.bodyForm{
+    background-color: black;
+    background-image: url('../../assets/img/caascos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     
+
+}
+
+
+.form{
+    background-color: white;
     position :relative;
     width  : 500px;
     margin : 0 auto;
+    margin-top: 20px;
     padding: 1em;
     background-color: rgba(249, 246, 246, 0.5);   
     
 }
 
-
-.fondo{
+.fondoForm{
     background: white;
     border-color: #E63A46;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 5px; 
     margin-left: 20px;
     width: 450px; 
 }
-.labelFondo{
+.labelFondoForm{
     background-color: rgba(249, 246, 246, 0.5);
 }
+.form-control{
+    margin-left: 20px;
+    margin-top: 1px;
+}
 
-.btn{
+.btnForm{
     background: white;
     border: solid 2px #E63A46;
     font-weight: bold;
