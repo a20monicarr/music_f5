@@ -36,13 +36,13 @@
     flex-direction: column;
 }
 
-#boton-login {
+.boton-login {
     padding: 15px 25px;
     border-radius: 5px;
     border-color: red;
 }
 
-#boton-login:hover {
+.boton-login:hover {
     color: white;
     background-color: red;
 }
