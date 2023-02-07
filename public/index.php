@@ -2,7 +2,7 @@
 
 use App\Controllers\GenderController;
 
-require "vendor/autoload.php";
+require "../vendor/autoload.php";
 
 $gender_controller = new GenderController;
 

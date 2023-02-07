@@ -1,18 +1,10 @@
 {
-    "name": "hp/music_f5",
-    "description": "proyecto 4 Playlist",
-    "type": "project",
+    "name": "marja/music_f5",
     "authors": [
         {
-            "name": "Mónica R.",
-            "email": "a20monicarr@gmail.com"
+            "name": "Marjane Oliveira",
+            "email": "marjane_rodrigues@hotmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Database\\":"database/",
-            "App\\":"app"
-        }
-    },
     "require": {}
 }
