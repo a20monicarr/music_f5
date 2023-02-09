@@ -86,19 +86,20 @@ class SongController{
     public function store($data)
     {
         $connection = Connection::getInstance()->get_instance_database();
-        
+        $sql="INSERT INTO `song` ( `idUser`, `idGender`, `title`, `artist`, `image`, `date`, `played`, `url`) 
+        VALUES ('{$data["idUser"]}', 
+                '{$data["idGender"]}',
+                '{$data["title"]}',
+                '{$data["artist"]}',
+                '{$data["image"]}',
+                '{$data["date"]}',
+                '{$data["played"]}',
+                '{$data["url"]}')";
         //evitando SQL injection //seguridad
-        $rows_affected = $connection->prepare("INSERT INTO  (nombre, direccion,
-        numero_bancario, puntos_cliente) VALUES(:nombre, :direccion, :numero_bancario, :puntos_cliente)");
-        
-        /* $rows_affected = $connection->prepare("INSERT INTO clientas (nombre, direccion,
-        numero_bancario, puntos_cliente) VALUES(
-            '{$data["nombre"]}',
-            '{$data["direccion"]}',
-            {$data['numero_bancario']},
-            {$data['puntos_cliente']}
-        )");*/
+        $rows_affected = $connection->prepare($sql);
+   
         print_r($rows_affected);
+        $rows_affected->execute();
     }
 
     /**
@@ -120,19 +121,46 @@ class SongController{
     /**
      * UPDATE: actualizar el registro dentro de la base de datos
      */
-    public function update()
+    public function update($data)
     {
+        //UPDATE `song` SET `title` = 'Brasil' WHERE `song`.`idSong` = 2;
+        $connection = Connection::getInstance()->get_instance_database();
+        $sql="UPDATE `song` 
+              SET  `idUser`= {$data["idUser"]}, 
+                                `idGender`= {$data["idGender"]}, 
+                                `title`= '{$data["title"]}', 
+                                `artist`= '{$data["artist"]}', 
+                                `image`=  '{$data["image"]}', 
+                                `date`= '{$data["date"]}', 
+                                `played`= '{$data["played"]}',
+                                `url`= '{$data["url"]}'
+             WHERE  `idSong`= {$data["idSong"]}"; 
+
+        $rows_affected = $connection->prepare($sql);
+        
+        print_r($rows_affected);
+        $rows_affected->execute();
 
     }
 
     /**
      * DESTROY: eliminar el registro
     */
-    public function destroy()
+    public function destroy($id)
     {
+        $connection = Connection::getInstance()->get_instance_database();
+        $sql = "DELETE FROM `song` WHERE `idSong` = $id";
 
+        $rows_affected = $connection->prepare($sql);
+
+        print_r($rows_affected);
+        $rows_affected->execute();
+        
     }
-
 }
+
+    
+
+
 
 ?>
