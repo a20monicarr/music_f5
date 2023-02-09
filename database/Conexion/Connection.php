@@ -45,7 +45,7 @@ class Connection{
         $setnames->execute();
         
         $this->connection = $connectionPDO;
-        var_dump($setnames);
+        //var_dump($setnames);
     }
 
     public function get_instance_database(){
