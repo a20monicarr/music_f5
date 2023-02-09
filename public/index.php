@@ -1,7 +1,8 @@
 <?php
 
 //use App\Controllers\UserController;
-use App\Controllers\GenderController;
+//use App\Controllers\GenderController;
+use App\Controllers\SongController;
 
 require "../vendor/autoload.php";
 
@@ -22,8 +23,12 @@ require "../vendor/autoload.php";
 //     "password" => "mariela"
 //      ]);
 
-$gender_controller = new GenderController;
+// $gender_controller = new GenderController;
+
+// //$user_controller->show();
+// $gender_controller->index();
+$song_controller = new SongController;
 
 //$user_controller->show();
-$gender_controller->index();
+$song_controller->index();
 ?>
