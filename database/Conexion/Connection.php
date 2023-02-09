@@ -1,6 +1,6 @@
 <?php
-namespace Database\PDO;
-require_once ("vendor/autoload.php");
+namespace Database\Conexion;
+require_once ("../vendor/autoload.php");
 //use Dotenv\Dotenv;
 
 class Connection{
@@ -45,7 +45,7 @@ class Connection{
         $setnames->execute();
         
         $this->connection = $connectionPDO;
-        var_dump($setnames);
+        //var_dump($setnames);
     }
 
     public function get_instance_database(){
