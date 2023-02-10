@@ -156,6 +156,16 @@ class SongController{
         print_r($rows_affected);
         $rows_affected->execute();
         
+        
+        /* Devolver el número de filas que fueron eliminadas */
+        // print("Devolver el número de filas que fueron eliminadas:\n");
+        $row_delete = $rows_affected->rowCount();
+        // print("Eliminadas $row_delete filas.\n");
+        $datos_salida = [$row_delete,
+        "El usuario con id: '{$id}' fue eliminado. "];
+        print_r($datos_salida);
+
+        return $datos_salida;
     }
 }
 
