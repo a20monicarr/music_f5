@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use Database\PDO\Connection;
+use Database\Conexion\Connection;
 
 class SongController{
 
@@ -29,11 +29,11 @@ class SongController{
     public function store($data)
     {
         $connection = Connection::getInstance()->get_instance_database();
-        
+
         //evitando SQL injection //seguridad
         $rows_affected = $connection->prepare("INSERT INTO  (nombre, direccion,
         numero_bancario, puntos_cliente) VALUES(:nombre, :direccion, :numero_bancario, :puntos_cliente)");
-        
+
         /* $rows_affected = $connection->prepare("INSERT INTO clientas (nombre, direccion,
         numero_bancario, puntos_cliente) VALUES(
             '{$data["nombre"]}',

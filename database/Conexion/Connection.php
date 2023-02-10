@@ -1,5 +1,5 @@
 <?php
-namespace Database\PDO;
+namespace Database\Conexion;
 require_once ("../vendor/autoload.php");
 //use Dotenv\Dotenv;
 

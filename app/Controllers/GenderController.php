@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use Database\PDO\Connection;
+use Database\Conexion\Connection;
 
 class GenderController{
 
@@ -29,12 +29,12 @@ class GenderController{
     public function store($data)
     {
         $connection = Connection::getInstance()->get_instance_database();
-        
+
         //evitando SQL injection //seguridad
         //$rows_affected = $connection->exec("INSERT INTO gender (gender) VALUES ( :gender ) ");
         $rows_affected = $connection->exec("INSERT INTO gender (gender) VALUES( '{$data["gender"]}')");
 
-        
+
         /* $rows_affected = $connection->prepare("INSERT INTO clientas (nombre, direccion,
         numero_bancario, puntos_cliente) VALUES(
             '{$data["nombre"]}',
