@@ -11,13 +11,13 @@ class SongControllerTest extends TestCase{
     */
     // Arrange : Escenario
     $song_controller = new SongController;
-    $datos_entrada = 6;
-    $datos_salida_esperados = [1,
-    "El usuario con id: '{$datos_entrada}' fue eliminado. "];
+    $datos_entrada = 1; // id de la cancion
+    $datos_salida_esperados = [1, 
+    "La canción con id: '{$datos_entrada}' fue eliminada. "];
 
     //Act : Ejecuto mi escenario de la caja negra llamo un método
     $datos_salida_reales= $song_controller->destroy($datos_entrada);
-    
+
     //Assert : Comprobar /comparar el escenario
     $this->assertEquals($datos_salida_esperados, $datos_salida_reales);
     }

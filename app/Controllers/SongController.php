@@ -162,7 +162,7 @@ class SongController{
         $row_delete = $rows_affected->rowCount();
         // print("Eliminadas $row_delete filas.\n");
         $datos_salida = [$row_delete,
-        "El usuario con id: '{$id}' fue eliminado. "];
+        "La canción con id: '{$id}' fue eliminada. "];
         print_r($datos_salida);
 
         return $datos_salida;
