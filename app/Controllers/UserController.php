@@ -29,11 +29,11 @@ class UserController{
     public function store($data)
     {
         // $connection = Connection::getInstance()->get_instance_database();
-        
+
         // //evitando SQL injection //seguridad
         // $rows_affected = $connection->prepare("INSERT INTO clientas (nombre, direccion,
         // numero_bancario, puntos_cliente) VALUES(:nombre, :direccion, :numero_bancario, :puntos_cliente)");
-        
+
         // /* $rows_affected = $connection->prepare("INSERT INTO clientas (nombre, direccion,
         // numero_bancario, puntos_cliente) VALUES(
         //     '{$data["nombre"]}',
@@ -49,27 +49,27 @@ class UserController{
      */
     public function show($data)
     {
-        $connection = Connection::getInstance()->get_instance_database();      
+        $connection = Connection::getInstance()->get_instance_database();
         $rows_affected = $connection->prepare(" SELECT * FROM `user` WHERE  `email` = '{$data["email"]}' AND `password` = MD5('{$data["password"]}');");
         $rows_affected->execute();
 
         $col_id = $rows_affected->fetchColumn();
         echo "cantidad lineas: " . $col_id;
-        
+
         $datos_salida = [$col_id,
         "El usuario con: '{$data["email"]}' fue encontrado. "];
         return $datos_salida;
 
         /*?>
-        
-         <!-- <table>
+
+<!-- <table>
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Password</th>
         </tr>
-    <?php foreach ($rows_affected as $clave => $valor): ?> 
+    <?php foreach ($rows_affected as $clave => $valor): ?>
         <tr>
            <td><?= $valor['idUser']; ?></td>
            <td><?= $valor['nameUser']; ?></td>
@@ -78,9 +78,9 @@ class UserController{
         </tr>
     <?php endforeach; ?>
     </table> -->
-        <?php */
-} 
-    
+<?php */
+}
+
 
     /**
      * EDIT: muestra un formulario para editar un registro

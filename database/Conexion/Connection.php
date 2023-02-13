@@ -1,6 +1,6 @@
 <?php
 namespace Database\Conexion;
-require_once ("vendor/autoload.php");
+require_once ("./vendor/autoload.php");
 //use Dotenv\Dotenv;
 
 class Connection{
@@ -30,8 +30,8 @@ class Connection{
         // $username = $_ENV["DB_USERNAME"];
         // $password = $_ENV["DB_PASSWORD"];
         // $database = $_ENV["DB_DATABASE"];
-        
-        $server = "localhost";
+
+        $server = "localhost:3310";
         $username = "root";
         $password = "";
         $database = "music_f5";
@@ -41,9 +41,9 @@ class Connection{
         $connectionPDO = new \PDO("mysql:host=$server;dbname=$database", $username, $password);
 
         // Esto nos ayuda a usar cualquier tipo de caracter en nuestras consultas xq las normaliza
-        $setnames = $connectionPDO->prepare("SET NAMES 'utf8'"); 
+        $setnames = $connectionPDO->prepare("SET NAMES 'utf8'");
         $setnames->execute();
-        
+
         $this->connection = $connectionPDO;
         //var_dump($setnames);
     }
