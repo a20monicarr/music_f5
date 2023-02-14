@@ -14,21 +14,21 @@
     <div class="container mt-5 ">
       <form class="form-login">
         <div class="form-group ">
-          <label for="username">Email</label>
+          <label for="userEmail">Email</label>
           <input
             type="text"
             class="form-control"
-            id="username"
+            id="userEmail"
             name="userEmail"
             placeholder="Tu correo electrónico"
           />
         </div>
         <div class="form-group">
-          <label for="password">Contraseña</label>
+          <label for="userPassword">Contraseña</label>
           <input
             type="password"
             class="form-control"
-            id="password"
+            id="userPassword"
             name="userPassword"
             placeholder="Tu contraseña"
           />
