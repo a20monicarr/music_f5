@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['user_id'])){
+    echo "Usuario no existe";
+     header('Location: login/frontLogin.php');
+} else {
+    echo ($_SESSION['user_id']);
+}
 
 //use App\Controllers\UserController;
 //use App\Controllers\GenderController;

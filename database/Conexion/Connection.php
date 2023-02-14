@@ -1,6 +1,6 @@
 <?php
 namespace Database\Conexion;
-require_once ("../../vendor/autoload.php");
+/*require_once ("../../vendor/autoload.php");*/
 //use Dotenv\Dotenv;
 
 class Connection{

@@ -22,13 +22,20 @@ $user_array= $user_controller->show([
      "password" => $password
 
       ]);
-   print_r ($user_array);
+  /* print_r ($user_array);*/
 
    if ($user_array [0] > 0) {
+    $_SESSION['user_id']=$user_array [0];
+
+     header('Location: ../index.php');
      echo "existe el usuario";
     } else {
         echo "El usuario con: '{$user}' NO fue encontrado.";
+
+        unset($_SESSION['user_id']);
     }
+
+
 
 }
 ?>
