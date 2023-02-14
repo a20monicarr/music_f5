@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use Database\PDO\Connection;
+use Database\Conexion\Connection;
 
 class GenderController{
 
