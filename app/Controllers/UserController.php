@@ -54,11 +54,20 @@ class UserController{
         $rows_affected->execute();
 
         $col_id = $rows_affected->fetchColumn();
-        echo "cantidad lineas: " . $col_id;
 
-        $datos_salida = [$col_id,
-        "El usuario con: '{$data["email"]}' fue encontrado. "];
-        return $datos_salida;
+        if ($col_id > 0) {
+           $datos_salida = [$col_id,
+           "El usuario con: '{$data["email"]}' fue encontrado. "];
+            return $datos_salida;
+
+        } else {
+          $datos_salida = [0,
+           "El usuario con: '{$data["email"]}' No fue encontrado. "];
+            return $datos_salida;
+        }
+
+
+
 
         /*?>
 
