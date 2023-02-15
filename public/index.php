@@ -11,9 +11,12 @@ if(!isset($_SESSION['user_id'])){
 //use App\Controllers\GenderController;
 use App\Controllers\SongController;
 
-//require "../vendor/autoload.php";
+require "../vendor/autoload.php";
 require_once "./home/template.html";
 require_once "./list/list.php";
+require_once "./form/indexForm.html";
+require_once "./view_modal/modal_close.html";
+
 // $gender_controller = new GenderController;
 
 // $gender_controller->store([
