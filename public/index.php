@@ -2,16 +2,17 @@
 session_start();
 if(!isset($_SESSION['user_id'])){
     echo "Usuario no existe";
-     header('Location: login/frontLogin.php');
+    header('Location: login/frontLogin.php');
 } else {
     echo ($_SESSION['user_id']);
 }
 
 //use App\Controllers\UserController;
 //use App\Controllers\GenderController;
-use App\Controllers\SongController;
+//use App\Controllers\SongController;
 
 require "../vendor/autoload.php";
+require_once "./home/template.html";
 
 
 // $gender_controller = new GenderController;
@@ -39,7 +40,7 @@ require "../vendor/autoload.php";
 
 // //$user_controller->show();
 // $song_controller->index();
-$song_controller = new SongController;
+//$song_controller = new SongController;
 
 //$user_controller->show();
 // $song_controller->store([
@@ -64,5 +65,5 @@ $song_controller = new SongController;
 //         "url" => "https://www.youtube.com/watch?v=eznXJEjvHbk"
 //          ]);
 
-         $song_controller->destroy(7);
+        //$song_controller->destroy(7);
 ?>
