@@ -1,10 +1,10 @@
 <?php
 
-//use App\Controllers\UserController;
+use App\Controllers\UserController;
 //use App\Controllers\GenderController;
 use App\Controllers\SongController;
 
-require "../vendor/autoload.php";
+require "vendor/autoload.php";
 
 // $gender_controller = new GenderController;
 
@@ -15,13 +15,13 @@ require "../vendor/autoload.php";
 //     ":gender" => "Pop"
 // ]);
 
-// $user_controller = new UserController;
+$user_controller = new UserController;
 
-// //$user_controller->show();
-// $user_controller->show([
-//     "email" => "mariela@gmail.com",
-//     "password" => "mariela"
-//      ]);
+// $user_controller->show();
+$user_controller->show([
+    "email" => "mariela@gmail.com",
+    "password" => "mariela"
+     ]);
 
 // $gender_controller = new GenderController;
 
@@ -56,5 +56,5 @@ $song_controller = new SongController;
 //         "url" => "https://www.youtube.com/watch?v=eznXJEjvHbk"
 //          ]);
 
-         $song_controller->destroy(7);
+        //  $song_controller->destroy(7);
 ?>

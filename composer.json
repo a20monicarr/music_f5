@@ -1,11 +1,10 @@
 {
-    "name": "hp/music_f5",
-    "description": "proyecto 4 Playlist",
+    "name": "franb/music_f5",
     "type": "project",
     "authors": [
         {
-            "name": "Mónica R.",
-            "email": "a20monicarr@gmail.com"
+            "name": "irene",
+            "email": "irenefl897@gmail.com"
         }
     ],
     "autoload": {
@@ -13,8 +12,6 @@
             "Database\\":"database/",
             "App\\":"app"
         }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.6"
-    }
+    },   
+    "require": {}
 }
