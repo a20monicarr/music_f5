@@ -39,7 +39,7 @@ class GenderController
         //SELECT * FROM `user` WHERE  `email` = 'monica@gmail.com'AND `password` = MD5('monica');
 //      UPDATE `user` SET `email` = 'monica@gmail.com', `password` = MD5('monica') WHERE `user`.`idUser` = 1;
         ?>
-        <select class="fondoForm">
+        <select name="genero" id="genero" class="fondoForm">
             <?php foreach ($rows_affected as $clave => $valor): ?>
                 <option value="<?= $valor['idGender']; ?>"><?= $valor['gender']; ?></option>
             <?php endforeach; ?>

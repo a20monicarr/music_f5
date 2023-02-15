@@ -5,15 +5,52 @@ if(!isset($_SESSION['user_id'])){
      //header('Location: login/frontLogin.php');
 } else {
     echo ($_SESSION['user_id']);
+    $user_id = $_SESSION['user_id'];
 }
 // use Dotenv\Dotenv;
 // require_once __DIR__.'/vendor/autoload.php';
 require_once '../vendor/autoload.php';
-//use App\Controllers\UserController;
+use App\Controllers\UserController;
 use App\Controllers\GenderController;
-//use App\Controllers\SongController;
+use App\Controllers\SongController;
+
+if(isset($_POST['artista'])){
+    // $user_controller = new UserController;
+      $artista = $_POST['artista'];
+      echo $artista."<br>";
+      $titulo = $_POST['titulo'];
+      echo $titulo."<br>";
+      $genero = $_POST['genero'];
+      echo $genero."<br>";
+      $url = $_POST['url'];
+      echo $url."<br>";
+      $foto = $_POST['foto'];
+      echo $foto."<br>";
+      
+      $song_controller = new SongController; 
+      $song_controller->store([
+        "idUser" =>  $user_id,
+        "idGender" => $genero,
+        "title" => $titulo,
+        "artist" => $artista,
+        "image" => $foto,
+        "date" => "NULL",
+        "played" => 0,
+        "url" => $url
+         ]);
+      
 
 
+
+
+
+    //   $password = $_POST['userPassword'];
+    // $user_array= $user_controller->show([
+    //      "email" => $user,
+    //      "password" => $password
+    
+    //   ]);
+}
 require_once "./home/template.html";
 require_once "./list/list.php";
 require_once "./form/indexForm.php";
@@ -28,13 +65,13 @@ require_once "./view_modal/modal_close.html";
 //     ":gender" => "Pop"
 // ]);
 
-$user_controller = new UserController;
+// $user_controller = new UserController;
 
 // $user_controller->show();
-$user_controller->show([
-    "email" => "mariela@gmail.com",
-    "password" => "mariela"
-     ]);
+// $user_controller->show([
+//     "email" => "mariela@gmail.com",
+//     "password" => "mariela"
+//      ]);
 
 // $gender_controller = new GenderController;
 

@@ -2,7 +2,7 @@
 namespace Database\Conexion;
 // use Dotenv\Dotenv;
 // require __DIR__.'/vendor/autoload.php';
-require_once '../../vendor/autoload.php';
+// require_once '../../vendor/autoload.php';
 class Connection{
 
     private static $instance;
@@ -31,10 +31,10 @@ class Connection{
         // $password = $_ENV["DB_PASSWORD"];
         // $database = $_ENV["DB_DATABASE"];
 
-        $server = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "music_f5";
+         $server = "localhost";
+         $username = "root";
+         $password = "";
+         $database = "music_f5";
 
         // ----- CONNECTION -----
 
