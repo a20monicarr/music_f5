@@ -29,10 +29,7 @@ class SongController{
         ON song.idUser = user.idUser
         INNER JOIN gender
         ON song.idGender = gender.idGender
-
         ";
-
-
 
         $rows_affected = $connection->prepare($sql);
         $rows_affected->execute();
@@ -54,7 +51,7 @@ class SongController{
 //      UPDATE `user` SET `email` = 'monica@gmail.com', `password` = MD5('monica') WHERE `user`.`idUser` = 1;
        
 
-    foreach ($rows_affected as $clave => $valor): ?>
+    foreach ($rows_affected as $valor): ?>
     
     <tr>
               <td class="tbl_td"><?= $valor['date']; ?></td></td>
@@ -117,7 +114,7 @@ class SongController{
     {
       $connection = Connection::getInstance()->get_instance_database();
 
-      $sql = "SELECT song.idSong, song.idUser, song.idGender, song.title, song.artist, song.image, song.date, song.played, song.url, user.nameUser, gender.gender
+      $sql = "SELECT song.idSong, song.idUser, song.idGender, song.title, song.artist, song.image, song.date, song.played, song.url, user.nameUser
       FROM song
       INNER JOIN user
       ON song.idUser = user.idUser
@@ -126,6 +123,8 @@ class SongController{
       $rows_affected = $connection->prepare($sql);
       $rows_affected->execute();
       print_r($rows_affected);
+      return $rows_affected;
+     
 
  
     }

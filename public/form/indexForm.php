@@ -7,7 +7,19 @@ use App\Controllers\SongController;
 
 if ($form_update_o_insert == "update") {
     $song_controller = new SongController;
-    $song_controller->show(12);
+    $song_array = $song_controller->show(8);
+    foreach ($song_array as $valor): 
+    
+       
+        $url = $valor['url'];
+        $title = $valor['title'];
+        $artist = $valor['artist'];
+        $idGender = $valor['idGender'];
+        $image = $valor['image'];
+        $nameUser = $valor['nameUser'];
+        echo $image;      
+             
+     endforeach;
 }
 ?>
 
@@ -26,11 +38,11 @@ if ($form_update_o_insert == "update") {
         <form class='form' method="post">
             <div class="formGroup">
                 <label for="labelFondoform">ARTISTA</label>
-                <input name="artista" type="artista" id="artista" class="fondoForm">
+                <input name="artista" type="artista" id="artista" class="fondoForm" value="<?php echo $artist?>">
             </div>
             <div class="formGroup">
                 <label for="labelFondoForm">TÍTULO</label>
-                <input name="titulo" type="titulo" id="titulo" class="fondoForm">
+                <input name="titulo" type="titulo" id="titulo" class="fondoForm" value="<?php echo $title?>">
             </div>
             <div class="formGroup">
                 <label for="labelFondoForm">GÉNERO</label>
@@ -48,12 +60,12 @@ if ($form_update_o_insert == "update") {
             </div>
             <div class="formGroup">
                 <label for="labelFondoForm">URL DE YOUTUBE</label>
-                <input name="url" type="url" id="url" class="fondoForm">
+                <input name="url" type="url" id="url" class="fondoForm" value="<?php echo $url?>">
             </div>
 
             <div class="formGroup">
                 <label for="labelFondoform">IMAGEN</label>
-                <input name="foto" type="file" id="foto" class="form-control" id="exampleFormControlFile1">
+                <input name="foto" type="file" id="foto" class="form-control" id="exampleFormControlFile1" value="<?php echo $image?>">
             </div>
             <button type="submit" class="btnForm btn-primary">ENVIAR</button>
         </form>
