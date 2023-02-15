@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['user_id'])){
     echo "Usuario no existe";
-    header('Location: login/frontLogin.php');
+     //header('Location: login/frontLogin.php');
 } else {
     echo ($_SESSION['user_id']);
 }
@@ -13,7 +13,9 @@ if(!isset($_SESSION['user_id'])){
 
 require "../vendor/autoload.php";
 require_once "./home/template.html";
-
+require_once "./list/list.php";
+require_once "./form/indexForm.html";
+require_once "./view_modal/modal_close.html";
 
 // $gender_controller = new GenderController;
 
@@ -65,5 +67,5 @@ require_once "./home/template.html";
 //         "url" => "https://www.youtube.com/watch?v=eznXJEjvHbk"
 //          ]);
 
-        //$song_controller->destroy(7);
+         //$song_controller->destroy(7);
 ?>

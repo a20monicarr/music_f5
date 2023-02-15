@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="./css/list.css">
+    <script src="./list/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="./list/css/list.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
   	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
