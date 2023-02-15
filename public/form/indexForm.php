@@ -19,13 +19,16 @@
             </div>    
             <div class="formGroup">
                 <label for="labelFondoForm">GÉNERO</label>
-                <select class="fondoForm" >
-                  <option></option>
-                  <option>Rock</option>
-                  <option>Pop</option>
-                  <option>Classic</option>
-                  <option>Blues</option>
-                </select>
+                <!-- <select class="fondoForm" > -->
+                    <?php
+                    require_once '../../vendor/autoload.php';
+                    use App\Controllers\GenderController;
+
+                    $gender_controller = new GenderController;
+
+                    $gender_controller->index();
+                    ?>
+                <!-- </select> -->
             </div>
             <div class="formGroup">
                 <label for="labelFondoForm">URL DE YOUTUBE</label>

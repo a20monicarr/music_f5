@@ -1,8 +1,8 @@
 <?php
 namespace Database\Conexion;
-/*require_once ("../../vendor/autoload.php");*/
-//use Dotenv\Dotenv;
-
+// use Dotenv\Dotenv;
+// require __DIR__.'/vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 class Connection{
 
     private static $instance;
@@ -23,8 +23,8 @@ class Connection{
 
     private function make_connection()
     {
-        // $dotenv = Dotenv::createImmutable(__DIR__ . '../../../');
-        // $dotenv->load();
+        //$dotenv = Dotenv::createImmutable(__DIR__.'../../../');
+        //$dotenv->load();
 
         // $server = $_ENV["DB_SERVER"];
         // $username = $_ENV["DB_USERNAME"];

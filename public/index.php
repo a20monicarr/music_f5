@@ -6,15 +6,17 @@ if(!isset($_SESSION['user_id'])){
 } else {
     echo ($_SESSION['user_id']);
 }
-
+// use Dotenv\Dotenv;
+// require_once __DIR__.'/vendor/autoload.php';
+require_once '../vendor/autoload.php';
 //use App\Controllers\UserController;
-//use App\Controllers\GenderController;
+use App\Controllers\GenderController;
 //use App\Controllers\SongController;
 
-require "../vendor/autoload.php";
+
 require_once "./home/template.html";
 require_once "./list/list.php";
-require_once "./form/indexForm.html";
+require_once "./form/indexForm.php";
 require_once "./view_modal/modal_close.html";
 
 // $gender_controller = new GenderController;
