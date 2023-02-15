@@ -34,7 +34,7 @@ if(isset($_POST['artista'])){
         "title" => $titulo,
         "artist" => $artista,
         "image" => $foto,
-        "date" => "NULL",
+        "date" => NULL,
         "played" => 0,
         "url" => $url
          ]);

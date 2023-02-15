@@ -44,74 +44,23 @@
           <th class="tbl_td">TTITULO</th>
           <th class="tbl_td">ARTISTA</th>
           <th class="tbl_td">GENERO</th>
-          <th class="tbl_td">URL</th>
           <th class="tbl_td">IMAGEN</th>
           <th class="tbl_td">CODER</th>
           <th class="tbl_td_accion"></th>
         </tr>
       </thead>
       <tbody class="listEmployees">
-          <?php //include_once 'employee.list.php' ?>
-          <tr>
-              <td class="tbl_td">GGGG</td>
-              <td class="tbl_td">GGGG</td>
-              <td class="tbl_td">GCVVBVBXB</td>
-              <td class="tbl_td">FF</td>
-              <td class="tbl_td">FDFDSF</td>
-              <td class="tbl_td">DFGDF</td>
-              <td class="tbl_td">FDFDSF</td>
-              <td class="tbl_td_accion">
-                <a class="edit " data-id="" href="#"> 
-                  <button class="btn_play"> <i class="fa fa-check"></i></button>
-                </a>
-                <a class="edit" data-id="" href="#">
-                  <button class="btn_update"><i class="fa fa-gear"></i></button>
-                </a>
-                <a class="delete" data-id="" href="#">
-                <button class="btn_delete">X</button>
-                </a>
-              </td>
-          </tr>
-          <tr>
-              <td class="tbl_td">GGGG</td>
-              <td class="tbl_td">GGGG</td>
-              <td class="tbl_td">GCVVBVBXB</td>
-              <td class="tbl_td">FF</td>
-              <td class="tbl_td">FDFDSF</td>
-              <td class="tbl_td">DFGDF</td>
-              <td class="tbl_td">FDFDSF</td>
-              <td class="tbl_td_accion">
-                <a class="edit " data-id="" href="#"> 
-                  <button class="btn_play"><i class="fa fa-check"></i></button>
-                </a>
-                <a class="edit" data-id="" href="#">
-                  <button class="btn_update">U</button>
-                </a>
-                <a class="delete" data-id="" href="#">
-                <button class="btn_delete">X</button>
-                </a>
-              </td>
-          </tr>
-          <tr>
-              <td class="tbl_td">GGGG</td>
-              <td class="tbl_td">GGGG</td>
-              <td class="tbl_td">GCVVBVBXB</td>
-              <td class="tbl_td">FF</td>
-              <td class="tbl_td">FDFDSF</td>
-              <td class="tbl_td">DFGDF</td>
-              <td class="tbl_td">FDFDSF</td>
-              <td class="tbl_td_accion">
-                <a class="edit " data-id="" href="#"> 
-                  <button class="btn_play"><i class="fa fa-check"></i></button>
-                </a>
-                <a class="edit" data-id="" href="#">
-                  <button class="btn_update">U</button>
-                </a>
-                <a class="delete" data-id="" href="#">
-                <button class="btn_delete">X</button>
-                </a>
-              </td>
-          </tr>
+
+      <?php 
+      //require_once '../../vendor/autoload.php';
+      use App\Controllers\SongController;
+      
+        $song_controller = new SongController;
+        $song_controller->index();
+      ?>
+      
+          
+          
       </tbody>
     </table>
   </div>

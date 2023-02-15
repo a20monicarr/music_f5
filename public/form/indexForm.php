@@ -37,7 +37,6 @@
 
             <div class="formGroup">
                 <label for="labelFondoform">IMAGEN</label>
-                <input type="disco" class="fondoForm" >
                 <input name="foto" type="file" id="foto" class="form-control" id="exampleFormControlFile1">
               </div>
             <button type="submit" class="btnForm btn-primary" >ENVIAR</button>

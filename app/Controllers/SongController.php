@@ -52,25 +52,31 @@ class SongController{
         //SELECT  `idUser`,`nameUser`,`email`,`password` FROM `user` WHERE 1
         //SELECT * FROM `user` WHERE  `email` = 'monica@gmail.com'AND `password` = MD5('monica');
 //      UPDATE `user` SET `email` = 'monica@gmail.com', `password` = MD5('monica') WHERE `user`.`idUser` = 1;
-        ?>
+       
 
-<table>
+    foreach ($rows_affected as $clave => $valor): ?>
+    
     <tr>
-        <th>Canción</th>
-        <th>Usuario</th>
-        <th>Fecha</th>
-        <th>Género</th>
-    </tr>
-    <?php foreach ($rows_affected as $clave => $valor): ?>
-    <tr>
-        <td><?= $valor['title']; ?></td>
-        <td><?= $valor['nameUser']; ?></td>
-        <td><?= $valor['date']; ?></td>
-        <td><?= $valor['gender']; ?></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
-<?php
+              <td class="tbl_td"><?= $valor['date']; ?></td></td>
+              <td class="tbl_td"><?= $valor['title']; ?></td></td>
+              <td class="tbl_td"><?= $valor['artist']; ?></td></td>
+              <td class="tbl_td"><?= $valor['gender']; ?></td></td>
+              <td class="tbl_td"><?= $valor['image']; ?></td></td>
+              <td class="tbl_td"><?= $valor['nameUser']; ?></td></td>
+              <td class="tbl_td_accion">
+                <a class="edit " data-id="" href="#"> 
+                  <button class="btn_play"> <i class="fa fa-check"></i></button>
+                </a>
+                <a class="edit" data-id="" href="#">
+                  <button class="btn_update"><i class="fa fa-gear"></i></button>
+                </a>
+                <a class="delete" data-id="" href="#">
+                <button class="btn_delete">X</button>
+                </a>
+              </td>
+          </tr>
+    <?php endforeach;
+
     }
 
     /**
