@@ -113,9 +113,21 @@ class SongController{
     /**
      * SHOW: muestra un registro específico
      */
-    public function show()
+    public function show($id_song)
     {
+      $connection = Connection::getInstance()->get_instance_database();
 
+      $sql = "SELECT song.idSong, song.idUser, song.idGender, song.title, song.artist, song.image, song.date, song.played, song.url, user.nameUser, gender.gender
+      FROM song
+      INNER JOIN user
+      ON song.idUser = user.idUser
+      WHERE song.idSong= $id_song";
+
+      $rows_affected = $connection->prepare($sql);
+      $rows_affected->execute();
+      print_r($rows_affected);
+
+ 
     }
 
     /**

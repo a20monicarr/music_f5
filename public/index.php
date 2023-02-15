@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user_id'])) {
     echo "Usuario no existe";
-     //header('Location: login/frontLogin.php');
+    //header('Location: login/frontLogin.php');
 } else {
     echo ($_SESSION['user_id']);
     $user_id = $_SESSION['user_id'];
@@ -10,36 +10,55 @@ if(!isset($_SESSION['user_id'])){
 // use Dotenv\Dotenv;
 // require_once __DIR__.'/vendor/autoload.php';
 require_once '../vendor/autoload.php';
+
 use App\Controllers\UserController;
 use App\Controllers\GenderController;
 use App\Controllers\SongController;
 
-if(isset($_POST['artista'])){
-    // $user_controller = new UserController;
-      $artista = $_POST['artista'];
-      echo $artista."<br>";
-      $titulo = $_POST['titulo'];
-      echo $titulo."<br>";
-      $genero = $_POST['genero'];
-      echo $genero."<br>";
-      $url = $_POST['url'];
-      echo $url."<br>";
-      $foto = $_POST['foto'];
-      echo $foto."<br>";
-      
-      $song_controller = new SongController; 
-      $song_controller->store([
-        "idUser" =>  $user_id,
-        "idGender" => $genero,
-        "title" => $titulo,
-        "artist" => $artista,
-        "image" => $foto,
-        "date" => NULL,
-        "played" => 0,
-        "url" => $url
-         ]);
-      
+$form_update_o_insert = "update";
+$_SESSION['form_update_o_insert']= $form_update_o_insert;
 
+if (isset($_POST['artista'])) {
+    if ($form_update_o_insert == "insert") {
+
+
+        // $user_controller = new UserController;
+        $artista = $_POST['artista'];
+        echo $artista . "<br>";
+        $titulo = $_POST['titulo'];
+        echo $titulo . "<br>";
+        $genero = $_POST['genero'];
+        echo $genero . "<br>";
+        $url = $_POST['url'];
+        echo $url . "<br>";
+        $foto = $_POST['foto'];
+        echo $foto . "<br>";
+
+        $song_controller = new SongController;
+        $song_controller->store([
+            "idUser" =>  $user_id,
+            "idGender" => $genero,
+            "title" => $titulo,
+            "artist" => $artista,
+            "image" => $foto,
+            "date" => NULL,
+            "played" => 0,
+            "url" => $url
+        ]);
+    } else {
+        // $song_controller = new SongController;
+        // $song_controller->update([
+        //     "idSong" => 12,
+        //     "idUser" => $user_id,
+        //     "idGender" => $genero,
+        //     "title" => $titulo,
+        //     "artist" => $artista,
+        //     "image" =>$foto,
+        //     "date" => NULL,
+        //     "played" => 0,
+        //     "url" => $url
+        // ]);
+    }
 
 
 
@@ -48,7 +67,7 @@ if(isset($_POST['artista'])){
     // $user_array= $user_controller->show([
     //      "email" => $user,
     //      "password" => $password
-    
+
     //   ]);
 }
 require_once "./home/template.html";
@@ -107,4 +126,3 @@ require_once "./view_modal/modal_close.html";
 //          ]);
 
          //$song_controller->destroy(7);
-?>
