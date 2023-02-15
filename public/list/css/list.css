@@ -44,6 +44,10 @@
 	background-color:red;
 	font-weight:bold;
 }
+
+.a_form {
+	text-decoration:none;
+}
 .btn_play{
 	background-color: #99B83C; 
 	color: white;
@@ -79,14 +83,14 @@
 }
 
 /* Este elemento debe tener "position: relative" */
-div#is-relative{
+/* div#is-relative{
 	max-width: 420px;
 	position: relative;
-  }
+  } */
   
   /* El icono debe ser "position: absolute"
    * Ademas le damos un "display: block" y lo posicionamos */
-  #icon{
+ /*  #icon{
 	position: absolute;
 	display: block;
 	bottom: .5rem;
@@ -99,5 +103,5 @@ div#is-relative{
 	padding-right: 2.5rem;
 	
   }
-
+ */
 

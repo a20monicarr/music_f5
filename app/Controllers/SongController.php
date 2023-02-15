@@ -54,21 +54,21 @@ class SongController{
     foreach ($rows_affected as $valor): ?>
     
     <tr>
-              <td class="tbl_td"><?= $valor['date']; ?></td></td>
-              <td class="tbl_td"><?= $valor['title']; ?></td></td>
-              <td class="tbl_td"><?= $valor['artist']; ?></td></td>
-              <td class="tbl_td"><?= $valor['gender']; ?></td></td>
-              <td class="tbl_td"><?= $valor['image']; ?></td></td>
-              <td class="tbl_td"><?= $valor['nameUser']; ?></td></td>
+              <td class="tbl_td"><?= $valor['date']; ?></td>
+              <td class="tbl_td"><?= $valor['title']; ?></td>
+              <td class="tbl_td"><?= $valor['artist']; ?></td>
+              <td class="tbl_td"><?= $valor['gender']; ?></td>
+              <td class="tbl_td"><?= $valor['image']; ?></td>
+              <td class="tbl_td"><?= $valor['nameUser']; ?></td>
               <td class="tbl_td_accion">
                 <a class="edit " data-id="" href="#"> 
-                  <button class="btn_play"> <i class="fa fa-check"></i></button>
+                  <button class="btn_play"><i class="bi bi-check-lg"></i>></button>
                 </a>
                 <a class="edit" data-id="" href="#">
-                  <button class="btn_update"><i class="fa fa-gear"></i></button>
+                  <button class="btn_update"><i class="bi bi-gear-fill"></i></button>
                 </a>
                 <a class="delete" data-id="" href="#">
-                <button class="btn_delete">X</button>
+                <button class="btn_delete"><i class="bi bi-x-lg"></i></button>
                 </a>
               </td>
           </tr>

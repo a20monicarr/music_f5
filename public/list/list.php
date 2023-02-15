@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
   	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" rel="stylesheet"/>
@@ -18,20 +19,18 @@
 </head>
 <body>
   <div class="block">
-    <div class="columns">
+  <div class="columns">
       <div class="column p-5">
           <input type="radio" name="radio_played" value="A" />Todas 
           <input type="radio" name="radio_played" value="P" />Reproducidas
           <input type="radio" name="radio_played" value="U" />No Reproducidas  
       </div>
       <div class="column p-5">
-        <div id="is-relative">
-          <input type="" class="input">
-          <span id="icon">
-          <i class="fa-thin fa-gear"></i>
-            <i class="fa-solid fa-gear">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </span>
+        <div class="input-group">
+          <div class="input-group-text" id="btnGroupAddon">
+            <i class="bi bi-search"></i>
+          </div> 
+          <input type="text" class="form-control" placeholder="Buscar por Titulo" aria-label="Buscar por Titulo" aria-describedby="btnGroupAddon">
         </div>
        
       </div>
