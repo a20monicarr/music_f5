@@ -1,13 +1,13 @@
 <?php
 // session_start();
-$form_update_o_insert = $_SESSION['form_update_o_insert'];
+
 // require_once '../../vendor/autoload.php';
 
 use App\Controllers\SongController;
 
 if ($form_update_o_insert == "update") {
     $song_controller = new SongController;
-    $song_array = $song_controller->show(12);
+    $song_array = $song_controller->show(2);
     foreach ($song_array as $valor): 
     
        
@@ -54,7 +54,7 @@ if ($form_update_o_insert == "update") {
 
                 $gender_controller = new GenderController;
 
-                $gender_controller->index($idGender);
+                $gender_controller->index($idGender); //Para el selected del option del select
                 ?>                   
                 <!-- </select> -->
             </div>

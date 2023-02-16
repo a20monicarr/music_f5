@@ -143,6 +143,7 @@ class SongController{
     public function update($data)
     {
         //UPDATE `song` SET `title` = 'Brasil' WHERE `song`.`idSong` = 2;
+        echo $data["image"];
         $connection = Connection::getInstance()->get_instance_database();
         $sql="UPDATE `song`
               SET  `idUser`= {$data["idUser"]},
