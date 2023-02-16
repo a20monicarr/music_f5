@@ -25,7 +25,7 @@ class GenderController
         $rows_affected->execute();
 
         $col_count = $rows_affected->fetchColumn();
-        echo "cantidad lineas: " . $col_count;
+        // echo "cantidad lineas: " . $col_count;
         //return $col_count;
 
         //if ($prepared->fetchColumn() == 1)

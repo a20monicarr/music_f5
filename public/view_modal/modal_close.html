@@ -14,24 +14,24 @@
 
     <h1 class="text-center">Modal</h1>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-content">
-        Open modal
+        Eliminar
     </button>
 
     <div class="modal fade" id="modal-content" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exModalLabel">¿Are you sure delete?</h5>
+                    <h5 class="modal-title" id="exModalLabel">¿Estas seguro qué quieres borrar?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close">
                         <span>&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <form method="post">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" name="borrar_cancion" id="borrar_cancion" class="btn btn-primary">Borrar</button>
+                    </form>
                 </div>
             </div>
         </div>

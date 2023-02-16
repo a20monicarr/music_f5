@@ -23,19 +23,29 @@ use App\Controllers\GenderController;
 use App\Controllers\SongController;
 
 $form_update_o_insert = $_SESSION['form_update_o_insert'];
-
-if (isset($_POST['artista'])) {
+if (isset($_POST['borrar_cancion'])) {
+    $song_controller = new SongController;
+    $song_controller->destroy(28);
+    unset($_POST['borrar_cancion']);
+}
+if ((isset($_POST['artista'])) and (isset($_POST['titulo'])) and (isset($_POST['genero'])) and (isset($_POST['url'])) and (isset($_POST['foto']))) {
 
     $artista = $_POST['artista'];
-    echo $artista . "<br>";
+    // echo $artista . "<br>";
     $titulo = $_POST['titulo'];
-    echo $titulo . "<br>";
+    // echo $titulo . "<br>";
     $genero = $_POST['genero'];
-    echo $genero . "<br>";
+    // echo $genero . "<br>";
     $url = $_POST['url'];
-    echo $url . "<br>";
+    // echo $url . "<br>";
     $foto = $_POST['foto'];
-    echo $foto . "<br>";
+    // echo $foto . "<br>";
+
+    unset($_POST['artista']);
+    unset($_POST['titulo']);
+    unset($_POST['genero']);
+    unset($_POST['url']);
+    unset($_POST['foto']);
 
     $song_controller = new SongController;
 
@@ -54,7 +64,7 @@ if (isset($_POST['artista'])) {
     } else { // Viene del formulario modificando
 
         $song_controller->update([
-            "idSong" => 2,
+            "idSong" => 12,
             "idUser" => $user_id,
             "idGender" => $genero,
             "title" => $titulo,
@@ -65,7 +75,6 @@ if (isset($_POST['artista'])) {
             "url" => $url
         ]);
     }
-
 } else {
     $form_update_o_insert = "update";
     $_SESSION['form_update_o_insert'] = $form_update_o_insert;
