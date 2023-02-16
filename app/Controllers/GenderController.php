@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use Database\Conexion\Connection;
@@ -10,7 +11,7 @@ class GenderController
      * INDEX: muestra la lista de todos los registros que tenemos
      */
 
-    public function index()
+    public function index($id_gender)
     {
         $connection = Connection::getInstance()->get_instance_database();
 
@@ -37,14 +38,14 @@ class GenderController
         //print_r($rows_affected);
         //SELECT  `idUser`,`nameUser`,`email`,`password` FROM `user` WHERE 1
         //SELECT * FROM `user` WHERE  `email` = 'monica@gmail.com'AND `password` = MD5('monica');
-//      UPDATE `user` SET `email` = 'monica@gmail.com', `password` = MD5('monica') WHERE `user`.`idUser` = 1;
-        ?>
+        //      UPDATE `user` SET `email` = 'monica@gmail.com', `password` = MD5('monica') WHERE `user`.`idUser` = 1;
+?>
         <select name="genero" id="genero" class="fondoForm">
-            <?php foreach ($rows_affected as $clave => $valor): ?>
-                <option value="<?= $valor['idGender']; ?>"><?= $valor['gender']; ?></option>
+            <?php foreach ($rows_affected as $clave => $valor) : ?>
+                <option value="<?= $valor['idGender']; ?>" <?php if ($valor['idGender'] == $id_gender) echo "selected" ?>><?= $valor['gender']; ?></option>
             <?php endforeach; ?>
         </select>
-        <?php
+<?php
     }
 
     /**
@@ -53,7 +54,6 @@ class GenderController
 
     public function create()
     {
-
     }
 
     /**
@@ -83,7 +83,6 @@ class GenderController
      */
     public function show()
     {
-       
     }
 
     /**
@@ -91,7 +90,6 @@ class GenderController
      */
     public function edit()
     {
-
     }
 
     /**
@@ -99,7 +97,6 @@ class GenderController
      */
     public function update()
     {
-
     }
 
     /**
@@ -107,9 +104,7 @@ class GenderController
      */
     public function destroy()
     {
-
     }
-
 }
 
 ?>

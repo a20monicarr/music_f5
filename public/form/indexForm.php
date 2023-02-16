@@ -54,8 +54,8 @@ if ($form_update_o_insert == "update") {
 
                 $gender_controller = new GenderController;
 
-                $gender_controller->index();
-                ?>
+                $gender_controller->index($idGender);
+                ?>                   
                 <!-- </select> -->
             </div>
             <div class="formGroup">
