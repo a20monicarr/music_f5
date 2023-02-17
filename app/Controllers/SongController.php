@@ -35,7 +35,7 @@ class SongController
         <td class="tbl_td"><?= $valor['title']; ?></td>
         <td class="tbl_td"><?= $valor['artist']; ?></td>
         <td class="tbl_td"><?= $valor['gender']; ?></td>
-        <td class="tbl_td"><?= $valor['image']; ?></td>
+        <td class="tbl_td"><img src="<?= $valor['image']; ?>" alt="song cover"> </td>
         <td class="tbl_td"><?= $valor['nameUser']; ?></td>
         <td class="tbl_td_accion">
           <a class="edit " data-id="<?= $valor['idUser']; ?>" href="<?= $valor['url']; ?>">

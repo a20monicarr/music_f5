@@ -7,7 +7,7 @@ use App\Controllers\SongController;
 
 if ($form_update_o_insert == "update") {
     $song_controller = new SongController;
-    $song_array = $song_controller->show(12);
+    $song_array = $song_controller->show(8);
     foreach ($song_array as $valor): 
     
        

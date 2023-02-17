@@ -64,7 +64,7 @@ if ((isset($_POST['artista'])) and (isset($_POST['titulo'])) and (isset($_POST['
     } else { // Viene del formulario modificando
 
         $song_controller->update([
-            "idSong" => 12,
+            "idSong" => 8,
             "idUser" => $user_id,
             "idGender" => $genero,
             "title" => $titulo,
