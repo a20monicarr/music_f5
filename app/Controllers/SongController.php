@@ -35,10 +35,10 @@ class SongController
         <td class="tbl_td"><?= $valor['title']; ?></td>
         <td class="tbl_td"><?= $valor['artist']; ?></td>
         <td class="tbl_td"><?= $valor['gender']; ?></td>
-        <td class="tbl_td"><img src="<?= $valor['image']; ?>" alt="song cover"> </td>
+        <td class="tbl_td"><img src="<?= $valor['image']; ?>" alt="song cover" > </td>
         <td class="tbl_td"><?= $valor['nameUser']; ?></td>
         <td class="tbl_td_accion">
-          <a class="edit " data-id="<?= $valor['idUser']; ?>" href="<?= $valor['url']; ?>">
+          <a class="edit " data-id="<?= $valor['idUser']; ?>" href="<?= $valor['url']; ?>" target="_blank">
             <button class="btn_play"><i class="bi bi-check-lg"></i></button>
           </a>
           <a class="edit" data-id="<?= $valor['idUser']; ?>" href="#">
@@ -121,7 +121,7 @@ class SongController
                                 `idGender`= {$data["idGender"]},
                                 `title`= '{$data["title"]}',
                                 `artist`= '{$data["artist"]}',
-                                `image`=  'localhost/music_f5/assets/songs/{$data["image"]}',
+                                `image`=  'http://localhost/music_f5/assets/songs/{$data["image"]}',
                                 `date`= '{$data["date"]}',
                                 `played`= '{$data["played"]}',
                                 `url`= '{$data["url"]}'
