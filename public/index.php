@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    echo "Usuario no existe";
+    // echo "Usuario no existe";
     header('Location: login/frontLogin.php');
 } else {
-    echo ($_SESSION['user_id']);
+    // echo ($_SESSION['user_id']);
     $user_id = $_SESSION['user_id'];
 }
 //   $password = $_POST['userPassword'];
@@ -76,7 +76,7 @@ if ((isset($_POST['artista'])) and (isset($_POST['titulo'])) and (isset($_POST['
         ]);
     }
 } else {
-    $form_update_o_insert = "update";
+    $form_update_o_insert = "insert";
     $_SESSION['form_update_o_insert'] = $form_update_o_insert;
 }
 

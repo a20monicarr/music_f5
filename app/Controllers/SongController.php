@@ -35,17 +35,17 @@ class SongController
         <td class="tbl_td"><?= $valor['title']; ?></td>
         <td class="tbl_td"><?= $valor['artist']; ?></td>
         <td class="tbl_td"><?= $valor['gender']; ?></td>
-        <td class="tbl_td"><img src="<?= $valor['image']; ?>" alt="song cover" > </td>
+        <td class="tbl_td"><img src="<?= $valor['image']; ?>" alt="song cover"> </td>
         <td class="tbl_td"><?= $valor['nameUser']; ?></td>
         <td class="tbl_td_accion">
-          <a class="edit " data-id="<?= $valor['idUser']; ?>" href="<?= $valor['url']; ?>" target="_blank">
+          <a class="play_song a_form" data-id="<?= $valor['idSong']; ?>" href="<?= $valor['url']; ?>" target="_blank">
             <button class="btn_play"><i class="bi bi-check-lg"></i></button>
           </a>
-          <a class="edit" data-id="<?= $valor['idUser']; ?>" href="#">
+          <a class="edit_song a_form" data-id="<?= $valor['idSong']; ?>" href="#">
             <button class="btn_update"><i class="bi bi-gear-fill"></i></button>
           </a>
-          <a  data-id="<?= $valor['idUser']; ?>" href="#">
-            <button class="btn_delete"><i class="bi bi-x-lg"></i></button>
+          <a class="delete_song a_form" data-id="<?= $valor['idSong']; ?>" href="#">
+            <button type="button" class="btn_delete" data-bs-toggle="modal" data-bs-target="#modal-content"><i class="bi bi-x-lg"></i></button>
           </a>
         </td>
       </tr>
@@ -71,14 +71,14 @@ class SongController
                 '{$data["idGender"]}',
                 '{$data["title"]}',
                 '{$data["artist"]}',
-                '{$data["image"]}',
+                'http://localhost/music_f5/assets/songs/{$data["image"]}',
                 '{$data["date"]}',
                 '{$data["played"]}',
                 '{$data["url"]}')";
     //evitando SQL injection //seguridad
     $rows_affected = $connection->prepare($sql);
 
-    print_r($rows_affected);
+    // print_r($rows_affected);
     $rows_affected->execute();
   }
 
@@ -97,7 +97,7 @@ class SongController
 
     $rows_affected = $connection->prepare($sql);
     $rows_affected->execute();
-    print_r($rows_affected);
+    // print_r($rows_affected);
     return $rows_affected;
   }
 
@@ -114,7 +114,7 @@ class SongController
   public function update($data)
   {
     //UPDATE `song` SET `title` = 'Brasil' WHERE `song`.`idSong` = 2;
-    echo $data["image"];
+    // echo $data["image"];
     $connection = Connection::getInstance()->get_instance_database();
     $sql = "UPDATE `song`
               SET  `idUser`= {$data["idUser"]},
@@ -129,7 +129,7 @@ class SongController
 
     $rows_affected = $connection->prepare($sql);
 
-    print_r($rows_affected);
+    // print_r($rows_affected);
     $rows_affected->execute();
   }
 
@@ -143,7 +143,7 @@ class SongController
 
     $rows_affected = $connection->prepare($sql);
 
-    print_r($rows_affected);
+    // print_r($rows_affected);
     $rows_affected->execute();
 
 
@@ -155,7 +155,7 @@ class SongController
       $row_delete,
       "La canción con id: '{$id}' fue eliminada. "
     ];
-    print_r($datos_salida);
+    // print_r($datos_salida);
 
     return $datos_salida;
   }

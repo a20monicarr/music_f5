@@ -17,9 +17,16 @@ if ($form_update_o_insert == "update") {
         $idGender = $valor['idGender'];
         $image = $valor['image'];
         $nameUser = $valor['nameUser'];
-        echo $image;
+    // echo $image;
 
     endforeach;
+} else {
+    $url = "";
+    $title = "";
+    $artist = "";
+    $idGender = 1;
+    $image = "";
+    $nameUser = "";
 }
 ?>
 
@@ -35,7 +42,7 @@ if ($form_update_o_insert == "update") {
 
 <body class="bodyForm">
     <div class="modal_containerform" id="modal_containerform">
-        <div class="modal" id="modal">
+        <div class="" id="">
             <form class='form' method="post">
                 <div class="formGroup">
                     <label for="labelFondoform">ARTISTA</label>
@@ -72,7 +79,7 @@ if ($form_update_o_insert == "update") {
             </form>
         </div>
     </div>
-   
+
 </body>
 
 </html>
