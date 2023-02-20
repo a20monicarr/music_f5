@@ -34,7 +34,7 @@ A simple Crud in MSQL edit, remove and update songs
 
 * [Composer](https://getcomposer.org/) - Dependency Management
 * [MSQL8](https://www.mysql.com/downloads/) - Database management system
-* [PHP8].
+* [PHP8]
 
 ## Contributing
 
